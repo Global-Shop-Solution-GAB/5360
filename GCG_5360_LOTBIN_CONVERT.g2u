@@ -1,0 +1,1534 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form_Main..Create
+Gui.Form_Main..Caption("Choose Method")
+Gui.Form_Main..Size(3735,3975)
+Gui.Form_Main..MinX(0)
+Gui.Form_Main..MinY(0)
+Gui.Form_Main..Position(0,0)
+Gui.Form_Main..BackColor(-2147483633)
+Gui.Form_Main..MaxButton(False)
+Gui.Form_Main..MinButton(False)
+Gui.Form_Main..MousePointer(0)
+Gui.Form_Main..Event(UnLoad,Form_Main_UnLoad)
+Gui.Form_Main.frameSelect.Create(Frame)
+Gui.Form_Main.frameSelect.Size(2925,1605)
+Gui.Form_Main.frameSelect.Position(195,210)
+Gui.Form_Main.frameSelect.Caption("Selection")
+Gui.Form_Main.optPL.Create(Option)
+Gui.Form_Main.optPL.Size(2265,255)
+Gui.Form_Main.optPL.Position(150,585)
+Gui.Form_Main.optPL.Parent("frameSelect")
+Gui.Form_Main.optPL.Caption("By Product Line / Range")
+Gui.Form_Main.optPL.Event(Click,optPL_Click)
+Gui.Form_Main.optAll.Create(Option)
+Gui.Form_Main.optAll.Size(1575,255)
+Gui.Form_Main.optAll.Position(150,270)
+Gui.Form_Main.optAll.Parent("frameSelect")
+Gui.Form_Main.optAll.Caption("All Inventory")
+Gui.Form_Main.optAll.Event(Click,optAll_Click)
+Gui.Form_Main.optSortCode.Create(Option)
+Gui.Form_Main.optSortCode.Size(2790,255)
+Gui.Form_Main.optSortCode.Position(150,900)
+Gui.Form_Main.optSortCode.Parent("frameSelect")
+Gui.Form_Main.optSortCode.Caption("By Sort Code / Range")
+Gui.Form_Main.optSortCode.Event(Click,optSortCode_Click)
+Gui.Form_Main.optExImp.Create(Option)
+Gui.Form_Main.optExImp.Size(1575,255)
+Gui.Form_Main.optExImp.Position(165,1230)
+Gui.Form_Main.optExImp.Parent("frameSelect")
+Gui.Form_Main.optExImp.Caption("Export/Import")
+Gui.Form_Main.optExImp.Event(Click,optExImp_Click)
+Gui.Form_Main.cmdOK.Create(Button)
+Gui.Form_Main.cmdOK.Size(855,375)
+Gui.Form_Main.cmdOK.Position(240,2595)
+Gui.Form_Main.cmdOK.Caption("OK")
+Gui.Form_Main.cmdOK.Event(Click,cmdOK_Click)
+Gui.Form_Main.cmdCancel.Create(Button)
+Gui.Form_Main.cmdCancel.Size(855,375)
+Gui.Form_Main.cmdCancel.Position(2250,2580)
+Gui.Form_Main.cmdCancel.Caption("Cancel")
+Gui.Form_Main.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.Form_Main.chkLicense.Create(CheckBox)
+Gui.Form_Main.chkLicense.Size(3030,360)
+Gui.Form_Main.chkLicense.Position(240,1935)
+Gui.Form_Main.chkLicense.Caption("Prep for GSS Smart Track")
+Gui.Form_Main.chkLicense.Event(Click,chkLicense_Click)
+Gui.Form_PL..Create
+Gui.Form_PL..Size(4365,5415)
+Gui.Form_PL..MinX(0)
+Gui.Form_PL..MinY(0)
+Gui.Form_PL..Position(0,0)
+Gui.Form_PL..BackColor(-2147483633)
+Gui.Form_PL..MousePointer(0)
+Gui.Form_PL..Caption("Select Product Lines")
+Gui.Form_PL..MaxButton(False)
+Gui.Form_PL..MinButton(False)
+Gui.Form_PL..Sizeable(False)
+Gui.Form_PL..Event(UnLoad,Form_PL_UnLoad)
+Gui.Form_PL.frameBin.Create(Frame)
+Gui.Form_PL.frameBin.Size(3810,1545)
+Gui.Form_PL.frameBin.Position(105,1140)
+Gui.Form_PL.frameBin.Caption("Bin Assignment")
+Gui.Form_PL.optInvMstr.Create(Option)
+Gui.Form_PL.optInvMstr.Size(3555,255)
+Gui.Form_PL.optInvMstr.Position(150,300)
+Gui.Form_PL.optInvMstr.Parent("frameBin")
+Gui.Form_PL.optInvMstr.Caption("Already Have Inventory Master Default Bin")
+Gui.Form_PL.optInvMstr.Event(Click,optInvMstr_Click)
+Gui.Form_PL.optAllinOne.Create(Option)
+Gui.Form_PL.optAllinOne.Size(3300,255)
+Gui.Form_PL.optAllinOne.Position(150,600)
+Gui.Form_PL.optAllinOne.Parent("frameBin")
+Gui.Form_PL.optAllinOne.Caption("All in the same bin (creates 1 new bin)")
+Gui.Form_PL.optAllinOne.Event(Click,optAllinOne_Click)
+Gui.Form_PL.optPLtoBIN.Create(Option)
+Gui.Form_PL.optPLtoBIN.Size(3240,255)
+Gui.Form_PL.optPLtoBIN.Position(150,885)
+Gui.Form_PL.optPLtoBIN.Parent("frameBin")
+Gui.Form_PL.optPLtoBIN.Caption("Assocaite Product Line to Specific Bin")
+Gui.Form_PL.optPLtoBIN.Event(Click,optPLtoBIN_Click)
+Gui.Form_PL.optLoc2Bin.Create(Option)
+Gui.Form_PL.optLoc2Bin.Size(3330,255)
+Gui.Form_PL.optLoc2Bin.Position(150,1185)
+Gui.Form_PL.optLoc2Bin.Parent("frameBin")
+Gui.Form_PL.optLoc2Bin.Caption("Create BIN's from Location code")
+Gui.Form_PL.optLoc2Bin.Event(Click,optLoc2Bin_Click)
+Gui.Form_PL.frameAllinOne.Create(Frame)
+Gui.Form_PL.frameAllinOne.Visible(False)
+Gui.Form_PL.frameAllinOne.Size(3750,1455)
+Gui.Form_PL.frameAllinOne.Position(150,2835)
+Gui.Form_PL.frameAllinOne.Caption("Define a Single BIN for All Records")
+Gui.Form_PL.lblSingleBin.Create(Label,"Name a Generic BIN:  RCV, FG, WHSE, 99, XX",True,3675,255,0,60,315,True,0,"Arial",8,-2147483633,0)
+Gui.Form_PL.lblSingleBin.Parent("frameAllinOne")
+Gui.Form_PL.txtSingleBin.Create(TextBox,"",True,1215,300,0,1215,645,True,0,"Arial",8,-2147483643,1)
+Gui.Form_PL.txtSingleBin.Parent("frameAllinOne")
+Gui.Form_PL.txtSingleBin.MaxLength(6)
+Gui.Form_PL.framePLtoBIN.Create(Frame)
+Gui.Form_PL.framePLtoBIN.Size(3750,1455)
+Gui.Form_PL.framePLtoBIN.Position(150,2850)
+Gui.Form_PL.framePLtoBIN.Caption("Product Line to BIN")
+Gui.Form_PL.txtPL.Create(TextBox,"",True,465,300,0,435,570,True,0,"Arial",8,-2147483643,1)
+Gui.Form_PL.txtPL.Parent("framePLtoBIN")
+Gui.Form_PL.txtPL.MaxLength(2)
+Gui.Form_PL.lblPL.Create(Label,"Product Line",True,1140,255,0,195,300,True,0,"Arial",8,-2147483633,0)
+Gui.Form_PL.lblPL.Parent("framePLtoBIN")
+Gui.Form_PL.lblBin.Create(Label,"BIN",True,390,255,0,2400,300,True,0,"Arial",8,-2147483633,0)
+Gui.Form_PL.lblBin.Parent("framePLtoBIN")
+Gui.Form_PL.txtBin.Create(TextBox,"",True,1215,300,0,1905,570,True,0,"Arial",8,-2147483643,1)
+Gui.Form_PL.txtBin.Parent("framePLtoBIN")
+Gui.Form_PL.cmdSavePair.Create(Button)
+Gui.Form_PL.cmdSavePair.Size(1350,375)
+Gui.Form_PL.cmdSavePair.Position(870,990)
+Gui.Form_PL.cmdSavePair.Parent("framePLtoBIN")
+Gui.Form_PL.cmdSavePair.Caption("Save Pairing")
+Gui.Form_PL.cmdSavePair.Event(Click,cmdSavePair_Click)
+Gui.Form_PL.cmdPLPair.Create(Button)
+Gui.Form_PL.cmdPLPair.Size(375,375)
+Gui.Form_PL.cmdPLPair.Position(960,570)
+Gui.Form_PL.cmdPLPair.Parent("framePLtoBIN")
+Gui.Form_PL.cmdPLPair.Caption("^")
+Gui.Form_PL.cmdPLPair.Event(Click,cmdPLPair_Click)
+Gui.Form_PL.cmdBinPair.Create(Button)
+Gui.Form_PL.cmdBinPair.Size(375,375)
+Gui.Form_PL.cmdBinPair.Position(3165,570)
+Gui.Form_PL.cmdBinPair.Parent("framePLtoBIN")
+Gui.Form_PL.cmdBinPair.Caption("^")
+Gui.Form_PL.cmdBinPair.Event(Click,cmdBinPair_Click)
+Gui.Form_PL.cmdBegin.Create(Button)
+Gui.Form_PL.cmdBegin.Size(1365,375)
+Gui.Form_PL.cmdBegin.Position(345,4365)
+Gui.Form_PL.cmdBegin.Caption("Begin Process")
+Gui.Form_PL.cmdBegin.Event(Click,cmdBegin_Click)
+Gui.Form_PL.cmdPLCancel.Create(Button)
+Gui.Form_PL.cmdPLCancel.Size(1365,375)
+Gui.Form_PL.cmdPLCancel.Position(2295,4365)
+Gui.Form_PL.cmdPLCancel.Caption("Cancel")
+Gui.Form_PL.cmdPLCancel.Event(Click,cmdPLCancel_Click)
+Gui.Form_PL.frameByPL.Create(Frame)
+Gui.Form_PL.frameByPL.Size(3795,1095)
+Gui.Form_PL.frameByPL.Position(120,75)
+Gui.Form_PL.frameByPL.Caption("By Product Line")
+Gui.Form_PL.lblPLEnd.Create(Label,"Ending Product Line",True,1650,255,0,2100,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form_PL.lblPLEnd.Parent("frameByPL")
+Gui.Form_PL.lblPLStart.Create(Label,"Starting Product Line",True,1695,255,0,150,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form_PL.lblPLStart.Parent("frameByPL")
+Gui.Form_PL.txtPLStart.Create(TextBox,"",True,480,300,0,390,600,True,0,"Arial",8,-2147483643,1)
+Gui.Form_PL.txtPLStart.Parent("frameByPL")
+Gui.Form_PL.txtPLStart.MaxLength(2)
+Gui.Form_PL.txtPLEnd.Create(TextBox,"",True,480,300,0,2280,600,True,0,"Arial",8,-2147483643,1)
+Gui.Form_PL.txtPLEnd.Parent("frameByPL")
+Gui.Form_PL.txtPLEnd.MaxLength(2)
+Gui.Form_PL.cmdBrwPLStart.Create(Button)
+Gui.Form_PL.cmdBrwPLStart.Size(375,375)
+Gui.Form_PL.cmdBrwPLStart.Position(960,600)
+Gui.Form_PL.cmdBrwPLStart.Parent("frameByPL")
+Gui.Form_PL.cmdBrwPLStart.Caption("^")
+Gui.Form_PL.cmdBrwPLStart.Event(Click,cmdBrwPLStart_Click)
+Gui.Form_PL.cmdBrwPLEnd.Create(Button)
+Gui.Form_PL.cmdBrwPLEnd.Size(375,375)
+Gui.Form_PL.cmdBrwPLEnd.Position(2850,600)
+Gui.Form_PL.cmdBrwPLEnd.Parent("frameByPL")
+Gui.Form_PL.cmdBrwPLEnd.Caption("^")
+Gui.Form_PL.cmdBrwPLEnd.Event(Click,cmdBrwPLEnd_Click)
+Gui.Form_PL.frameSort.Create(Frame)
+Gui.Form_PL.frameSort.Size(3795,1095)
+Gui.Form_PL.frameSort.Position(120,75)
+Gui.Form_PL.frameSort.Caption("By Sort Code")
+Gui.Form_PL.lblStSort.Create(Label,"Starting Sort Code",True,1500,255,0,210,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form_PL.lblStSort.Parent("frameSort")
+Gui.Form_PL.lblEndSort.Create(Label,"Ending Sort Code",True,1455,255,0,2025,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form_PL.lblEndSort.Parent("frameSort")
+Gui.Form_PL.txtSCStart.Create(TextBox,"",True,1020,300,0,315,585,False,0,"Arial",8,-2147483643,1)
+Gui.Form_PL.txtSCStart.Parent("frameSort")
+Gui.Form_PL.txtSCStart.MaxLength(2)
+Gui.Form_PL.txtSCEnd.Create(TextBox,"",True,1020,300,0,2055,585,False,0,"Arial",8,-2147483643,1)
+Gui.Form_PL.txtSCEnd.Parent("frameSort")
+Gui.Form_PL.txtSCEnd.MaxLength(2)
+Gui.Form_PL.cmdBrwSCStart.Create(Button)
+Gui.Form_PL.cmdBrwSCStart.Size(375,375)
+Gui.Form_PL.cmdBrwSCStart.Position(1365,540)
+Gui.Form_PL.cmdBrwSCStart.Parent("frameSort")
+Gui.Form_PL.cmdBrwSCStart.Caption("^")
+Gui.Form_PL.cmdBrwSCStart.Event(Click,cmdBrwSCStart_Click)
+Gui.Form_PL.cmdBrwSCEnd.Create(Button)
+Gui.Form_PL.cmdBrwSCEnd.Size(375,375)
+Gui.Form_PL.cmdBrwSCEnd.Position(3090,540)
+Gui.Form_PL.cmdBrwSCEnd.Parent("frameSort")
+Gui.Form_PL.cmdBrwSCEnd.Caption("^")
+Gui.Form_PL.cmdBrwSCEnd.Event(Click,cmdBrwSCEnd_Click)
+Gui.Grid_Form..Create
+Gui.Grid_Form..Size(6420,1950)
+Gui.Grid_Form..MinX(0)
+Gui.Grid_Form..MinY(0)
+Gui.Grid_Form..Position(0,0)
+Gui.Grid_Form..BackColor(-2147483633)
+Gui.Grid_Form..MousePointer(0)
+Gui.Grid_Form.GsGridControl_Export.Create(GsGridControl)
+Gui.Grid_Form.GsGridControl_Export.Size(5340,1215)
+Gui.Grid_Form.GsGridControl_Export.Position(510,105)
+Gui.FormOpt..Create
+Gui.FormOpt..Caption("Common Company Options")
+Gui.FormOpt..Size(6015,7920)
+Gui.FormOpt..MinX(0)
+Gui.FormOpt..MinY(0)
+Gui.FormOpt..Position(0,0)
+Gui.FormOpt..BackColor(-2147483633)
+Gui.FormOpt..MousePointer(0)
+Gui.FormOpt..MaxButton(False)
+Gui.FormOpt..MinButton(False)
+Gui.FormOpt..Sizeable(False)
+Gui.FormOpt..Event(UnLoad,cmdCancelOpt_Click)
+Gui.FormOpt.frameInv.Create(Frame)
+Gui.FormOpt.frameInv.Size(5445,1515)
+Gui.FormOpt.frameInv.Position(135,90)
+Gui.FormOpt.frameInv.Caption("Inventory Options")
+Gui.FormOpt.chk400561.Create(CheckBox)
+Gui.FormOpt.chk400561.Size(4065,360)
+Gui.FormOpt.chk400561.Position(195,585)
+Gui.FormOpt.chk400561.Parent("frameInv")
+Gui.FormOpt.chk400561.Caption("Auto Number LOT at Receipts and WIP to FG")
+Gui.FormOpt.chk400561.Event(Click,chk400561_Click)
+Gui.FormOpt.chk400363.Create(CheckBox)
+Gui.FormOpt.chk400363.Size(3780,360)
+Gui.FormOpt.chk400363.Position(195,240)
+Gui.FormOpt.chk400363.Parent("frameInv")
+Gui.FormOpt.chk400363.Caption("Multiple Locations")
+Gui.FormOpt.txt400561.Create(TextBox,"",True,1215,300,0,645,990,True,0,"Arial",8,-2147483643,1)
+Gui.FormOpt.txt400561.Parent("frameInv")
+Gui.FormOpt.lblNextLot.Create(Label,"Next Lot Number",True,1935,255,0,1950,1065,True,0,"Arial",8,-2147483633,0)
+Gui.FormOpt.lblNextLot.Parent("frameInv")
+Gui.FormOpt.framePurch.Create(Frame)
+Gui.FormOpt.framePurch.Size(5445,1515)
+Gui.FormOpt.framePurch.Position(150,1695)
+Gui.FormOpt.framePurch.Caption("Purchasing / Receiving Options")
+Gui.FormOpt.chk401895.Create(CheckBox)
+Gui.FormOpt.chk401895.Size(4890,360)
+Gui.FormOpt.chk401895.Position(195,240)
+Gui.FormOpt.chk401895.Parent("framePurch")
+Gui.FormOpt.chk401895.Caption("Auto Number LOT at PO Receipts if Inventory Part is flagged")
+Gui.FormOpt.chk401895.Event(Click,chk401895_Click)
+Gui.FormOpt.chk401896.Create(CheckBox)
+Gui.FormOpt.chk401896.Size(3180,360)
+Gui.FormOpt.chk401896.Position(195,585)
+Gui.FormOpt.chk401896.Parent("framePurch")
+Gui.FormOpt.chk401896.Caption("Generate multiple LOTs at PO Receipt")
+Gui.FormOpt.chk3.Create(CheckBox)
+Gui.FormOpt.chk3.Size(1560,360)
+Gui.FormOpt.chk3.Position(195,930)
+Gui.FormOpt.chk3.Parent("framePurch")
+Gui.FormOpt.frameMfg.Create(Frame)
+Gui.FormOpt.frameMfg.Size(5445,1515)
+Gui.FormOpt.frameMfg.Position(165,3210)
+Gui.FormOpt.frameMfg.Caption("Manufacturing / Finished Goods Options")
+Gui.FormOpt.chk401282.Create(CheckBox)
+Gui.FormOpt.chk401282.Size(4725,360)
+Gui.FormOpt.chk401282.Position(195,240)
+Gui.FormOpt.chk401282.Parent("frameMfg")
+Gui.FormOpt.chk401282.Caption("AutoNumber Lots with Work Order and Suffix at WIP to FG")
+Gui.FormOpt.chk401282.Event(Click,chk401282_Click)
+Gui.FormOpt.frameMisc.Create(Frame)
+Gui.FormOpt.frameMisc.Size(5445,1515)
+Gui.FormOpt.frameMisc.Position(165,4845)
+Gui.FormOpt.frameMisc.Caption("Miscellaneous Options")
+Gui.FormOpt.chk400524.Create(CheckBox)
+Gui.FormOpt.chk400524.Size(4860,360)
+Gui.FormOpt.chk400524.Position(195,240)
+Gui.FormOpt.chk400524.Parent("frameMisc")
+Gui.FormOpt.chk400524.Caption("In Inventory Transfers, Delete Zero Quantity Lot/Bin Records")
+Gui.FormOpt.cmdSaveOpt.Create(Button)
+Gui.FormOpt.cmdSaveOpt.Size(855,375)
+Gui.FormOpt.cmdSaveOpt.Position(1905,6540)
+Gui.FormOpt.cmdSaveOpt.Caption("Save")
+Gui.FormOpt.cmdSaveOpt.Event(Click,cmdSaveOpt_Click)
+Gui.FormOpt.cmdCancelOpt.Create(Button)
+Gui.FormOpt.cmdCancelOpt.Size(855,375)
+Gui.FormOpt.cmdCancelOpt.Position(2955,6525)
+Gui.FormOpt.cmdCancelOpt.Caption("Cancel")
+Gui.FormOpt.cmdCancelOpt.Event(Click,cmdCancelOpt_Click)
+Gui.FormOpt.lbl1.Create(Label,"Recommended",True,1935,255,0,2250,5445,True,0,"Arial",8,-2147483633,0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global..BulkDeclareString(sAll,sProductLines,sSortCodes,sPltoBIN,sExpImp,sJoin,sLog,sLot,sBinFile,sItemFile,sMaster,sUpdate)
+v.Global..BulkDeclareBoolean(bAll,bPLRange,bSortCode,bExpImp,bLicensePlate,bAllinOne,bPLtoBIN,bInvMast,bLoctoBin,bAuto)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+f.ODBC.Connection!conx.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass)
+gui.Form_main..show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.Form_Main_UnLoad.Start
+f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.End
+
+Program.Sub.Form_Main_UnLoad.End
+
+Program.Sub.cmdOK_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdOK_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+gui.Form_Main..Visible(False)
+
+'determine what to show/hide on the next form and which form to open
+f.Intrinsic.Control.If(v.Global.bAll,"=",True)
+	gui.Form_PL.frameByPL.Visible(False)
+	gui.Form_PL.frameBin.Visible(True)
+	gui.Form_PL.frameAllinOne.Visible(False)
+	gui.Form_PL.framePLtoBIN.Visible(False)
+	gui.Form_PL.frameSort.Visible(False)
+	gui.Form_PL..Show
+f.Intrinsic.Control.ElseIf(v.Global.bPLRange,"=",True)
+	gui.Form_PL.frameByPL.Visible(True)
+	gui.Form_PL.frameBin.Visible(True)
+	gui.Form_PL.frameAllinOne.Visible(false)
+	gui.Form_PL.framePLtoBIN.Visible(false)
+	gui.Form_PL.frameSort.Visible(False)
+	gui.Form_PL..Show
+f.Intrinsic.Control.ElseIf(v.Global.bSortCode,"=",True)
+	gui.Form_PL.frameByPL.Visible(False)
+	gui.Form_PL.frameBin.Visible(True)
+	gui.Form_PL.frameAllinOne.Visible(false)
+	gui.Form_PL.framePLtoBIN.Visible(false)
+	gui.Form_PL.frameSort.Visible(True)
+	gui.Form_PL..Show
+f.Intrinsic.Control.ElseIf(v.Global.bExpImp,"=",True)
+'need to launch a separate form here so we can decide to export or import a file that's already been cleaned up.
+	f.Intrinsic.Control.CallSub(Export)
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdOK_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdOK_Click.End
+
+Program.Sub.cmdCancel_Click.Start
+f.Intrinsic.Control.End
+
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.optInvMstr_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optInvMstr_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+v.Global.bPLtoBIN.Set(False)
+v.Global.bAllinOne.Set(False)
+v.Global.bInvMast.Set(True)
+v.Global.bLoctoBin.Set(False)
+gui.Form_PL.framePLtoBIN.Visible(False)
+gui.Form_PL.frameAllinOne.Caption("Override for blank bins?")
+gui.Form_PL.frameAllinOne.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optInvMstr_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.optInvMstr_Click.End
+
+Program.Sub.optAllinOne_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optAllinOne_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+v.Global.bInvMast.Set(False)
+v.Global.bPLtoBIN.Set(False)
+v.Global.bAllinOne.Set(True)
+v.Global.bLoctoBin.Set(False)
+gui.Form_PL.framePLtoBIN.Visible(False)
+gui.Form_PL.frameAllinOne.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optAllinOne_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.optAllinOne_Click.End
+
+Program.Sub.optLoc2Bin_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optLoc2Bin_Click_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local.sError.Declare
+
+v.Global.bPLtoBIN.Set(False)
+v.Global.bAllinOne.Set(False)
+v.Global.bInvMast.Set(False)
+v.Global.bLoctoBin.Set(True)
+gui.Form_PL.framePLtoBIN.Visible(False)
+gui.Form_PL.frameAllinOne.Caption("Override for blank bins?")
+gui.Form_PL.frameAllinOne.Visible(True)
+
+F.Intrinsic.Control.Label("optLoc2Bin_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.optLoc2Bin_Click.End
+
+Program.Sub.optPLtoBIN_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optPLtoBIN_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+v.Global.bInvMast.Set(False)
+v.Global.bPLtoBIN.Set(True)
+v.Global.bAllinOne.Set(False)
+v.Global.bLoctoBin.Set(False)
+gui.Form_PL.framePLtoBIN.Visible(True)
+gui.Form_PL.frameAllinOne.Visible(False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optPLtoBIN_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.optPLtoBIN_Click.End
+
+Program.Sub.optAll_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optAll_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+v.Global.bAll.Set(True)
+v.Global.bExpImp.Set(False)
+v.Global.bPLRange.Set(False)
+v.Global.bSortCode.Set(False)
+gui.Form_PL..Caption("Choose BIN Assignment Method")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optAll_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.optAll_Click.End
+
+Program.Sub.optPL_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optPL_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+v.Global.bAll.Set(False)
+v.Global.bExpImp.Set(False)
+v.Global.bPLRange.Set(True)
+v.Global.bSortCode.Set(False)
+gui.Form_PL.optPLtoBIN.Caption("Associate Product Line to BIN")
+gui.Form_PL.lblPL.Caption("Product Line")
+gui.Form_PL..Caption("Set Options by Product Line")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optPL_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.optPL_Click.End
+
+Program.Sub.optExImp_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optExImp_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+v.Global.bAll.Set(False)
+v.Global.bExpImp.Set(True)
+v.Global.bPLRange.Set(False)
+v.Global.bSortCode.Set(False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optExImp_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.optExImp_Click.End
+
+Program.Sub.Form_PL_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("cmdOK_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+gui.Form_PL..Visible(False)
+gui.Form_Main..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdOK_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Form_PL_UnLoad.End
+
+Program.Sub.cmdPLCancel_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPLCancel_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+gui.Form_PL..Visible(False)
+gui.Form_Main..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPLCancel_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdPLCancel_Click.End
+
+Program.Sub.optSortCode_Click.Start
+F.Intrinsic.Control.SetErrorHandler("optExImp_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+v.Global.bAll.Set(False)
+v.Global.bExpImp.Set(False)
+v.Global.bPLRange.Set(False)
+v.Global.bSortCode.Set(True)
+gui.Form_PL.optPLtoBIN.Caption("Associate Sort Code to BIN")
+gui.Form_PL.lblPL.Caption("Sort Code")
+gui.Form_PL..Caption("Set Options by Sort Code")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optExImp_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.optSortCode_Click.End
+
+Program.Sub.Export.Start
+F.Intrinsic.Control.SetErrorHandler("Export_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError,sSql,sFile,sMsg)
+v.Local..BulkDeclareBoolean(bFileExists,bExcel,bFileLocked)
+
+'open connection and get data from inventory
+v.Local.sSql.Set("Select Part, Location, BIN, Product_Line, Description, QTY_ONHAND, AMT_COST FROM V_INVENTORY_MSTR")
+F.Data.DataTable.CreateFromSQL("INV","CONX",V.Local.sSql)
+f.Data.DataTable.AddColumn("INV","LOT","STRING")
+F.Data.DataTable.AddColumn("INV","ITEM_BIN","STRING")
+F.Data.DataTable.AddColumn("INV","HEAT","STRING")
+F.Data.DataTable.AddColumn("INV","SERIAL","STRING")
+F.Data.DataTable.SetValue("INV",0,"LOT","15 CHAR MAX","ITEM_BIN","6 CHAR","HEAT","15 CHAR MAX","SERIAL","30 CHAR MAX")
+
+'create the view
+f.Data.DataView.Create("INV","V_INV")
+
+'bind to gridcontrol
+gui.Grid_Form.GsGridControl_Export.DataSource("INV","V_INV")
+GUI.Grid_Form.GsGridControl_Export.AddGridviewFromDatatable("GV_INV","INV")
+
+'blink the screen so the data populates to the grid
+gui.Grid_Form..Show
+gui.Grid_Form..Visible(False)
+
+'export based on available program
+f.Intrinsic.Control.If(v.Local.bExcel)
+	f.Intrinsic.String.Build("{0}\GCG_LOTBIN_EXPORT.xlsx",V.Caller.FilesDir,v.Local.sFile)
+	f.Intrinsic.File.IsFileLocked(v.Local.sFile,v.Local.bFileLocked)
+	f.Intrinsic.Control.If(v.Local.bFileLocked)
+		f.Intrinsic.String.Build("The file is already open, please close and try again. {0} FILE : {1}",v.Ambient.NewLine,v.Local.sFile,v.Local.sMsg)
+		f.Intrinsic.UI.Msgbox(v.Local.sMsg,"File in use")
+	f.Intrinsic.Control.else
+		Gui.Grid_Form.GsGridControl_Export.Export(v.Local.sFile,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFile,"","",1)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("{0}\GCG_LOTBIN_EXPORT.csv",V.Caller.FilesDir,v.Local.sFile)
+	f.Intrinsic.File.IsFileLocked(v.Local.sFile,v.Local.bFileLocked)
+	f.Intrinsic.Control.If(v.Local.bFileLocked)
+		f.Intrinsic.String.Build("The file is already open, please close and try again. {0} FILE : {1}",v.Ambient.NewLine,v.Local.sFile,v.Local.sMsg)
+		f.Intrinsic.UI.Msgbox(v.Local.sMsg,"File in use")
+	f.Intrinsic.Control.else
+		Gui.Grid_Form.GsGridControl_Export.Export(v.Local.sFile,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFile,"","",1)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+'create a text file in the gab\gas folder: this will tell us later if this program has been run before
+f.Intrinsic.String.Build("{0}\{1}",v.Caller.GasDir,"gcg_convert.txt",v.Local.sFile)
+f.Intrinsic.String.Build("Data export ran on {0}",v.Ambient.Date,v.Local.sMsg)
+f.Intrinsic.File.String2File(v.Local.sfile,v.Local.sMsg)
+
+
+f.Intrinsic.Control.CallSub(form_main_unload)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Export_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Export.End
+
+Program.Sub.cmdBrwSCStart_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrwSCStart_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(125,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Sort Code was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form_PL.txtSCEnd.Text(v.Local.sRet(0))
+	gui.Form_PL.txtSCStart.Text(v.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrwSCStart_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBrwSCStart_Click.End
+
+Program.Sub.cmdBrwSCEnd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrwSCEnd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(125,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Sort Code was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form_PL.txtSCStart.Text(v.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrwSCEnd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBrwSCEnd_Click.End
+
+Program.Sub.cmdBrwPLStart_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrwPLStart_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(130,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Product Line was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form_PL.txtPLStart.text(v.Local.sRet(0))
+	gui.Form_PL.txtPLEnd.Text(v.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrwPLStart_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBrwPLStart_Click.End
+
+Program.Sub.cmdSavePair_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdSavePair_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.bExists.Declare(boolean)
+
+Function.Intrinsic.Control.If(V.Global.bPLRange,"=",True)
+	f.Intrinsic.Control.If(v.DataTable.PLBIN.exists,"=",True)
+		f.Data.DataTable.AddRow("PLBIN","PRODUCT_LINE",V.Screen.Form_PL!txtPL.Text,"BIN",V.Screen.Form_PL!txtBin.Text)
+	Function.Intrinsic.Control.Else
+		F.Data.DataTable.Create("PLBIN",True)
+		F.Data.DataTable.AddColumn("PLBIN","PRODUCT_LINE","STRING")
+		F.Data.DataTable.AddColumn("PLBIN","BIN","STRING")
+		F.Data.DataTable.AddRow("PLBIN","PRODUCT_LINE",V.Screen.Form_PL!txtPL.Text,"BIN",V.Screen.Form_PL!txtBin.Text)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.ElseIf(v.Global.bSortCode,"=",True)
+	f.Intrinsic.Control.If(v.DataTable.SCBIN.exists,"=",True)
+		f.Data.DataTable.AddRow("SCBIN","CODE_SORT",V.Screen.Form_PL!txtPL.Text,"BIN",V.Screen.FORM_PL!txtBin.Text)
+	Function.Intrinsic.Control.Else
+		F.Data.DataTable.Create("SCBIN",True)
+		F.Data.DataTable.AddColumn("SCBIN","CODE_SORT","STRING")
+		F.Data.DataTable.AddColumn("SCBIN","BIN","STRING")
+		F.Data.DataTable.AddRow("SCBIN","CODE_SORT",V.Screen.Form_PL!txtPL.Text,"BIN",V.Screen.Form_PL!txtBin.Text)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.Else
+	f.Intrinsic.Control.If(v.DataTable.PLBIN.exists,"=",True)
+		f.Data.DataTable.AddRow("PLBIN","PRODUCT_LINE",V.Screen.Form_PL!txtPL.Text,"BIN",V.Screen.Form_PL!txtBin.Text)
+	Function.Intrinsic.Control.Else
+		F.Data.DataTable.Create("PLBIN",True)
+		F.Data.DataTable.AddColumn("PLBIN","PRODUCT_LINE","STRING")
+		F.Data.DataTable.AddColumn("PLBIN","BIN","STRING")
+		F.Data.DataTable.AddRow("PLBIN","PRODUCT_LINE",V.Screen.Form_PL!txtPL.Text,"BIN",V.Screen.Form_PL!txtBin.Text)
+	Function.Intrinsic.Control.EndIf	
+Function.Intrinsic.Control.EndIf
+
+gui.Form_PL.txtBin.Text("")
+gui.Form_PL.txtPL.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdSavePair_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdSavePair_Click.End
+
+Program.Sub.cmdPLPair_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPLPair_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+v.Local.sMsg.Declare(String)
+
+f.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+f.Intrinsic.Control.If(v.Global.bSortCode,"=",True)
+	f.Intrinsic.UI.Browser(125,"",v.Local.sRet)
+	v.Local.sMsg.Set("No Sort Code was selected")
+f.Intrinsic.Control.Else
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser(130,"",V.Local.sRet)
+	v.Local.sMsg.Set("No Product Line was selected")
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox(v.Local.sMsg)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form_PL.txtPL.Text(v.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPLPair_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdPLPair_Click.End
+
+Program.Sub.cmdBinPair_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPLPair_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(150,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Bin was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form_PL.txtBin.Text(v.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPLPair_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBinPair_Click.End
+
+Program.Sub.chkLicense_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Preflight_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError,sMsg)
+v.Local.bOpt.Declare(Boolean)
+v.Local.iNum.Declare(Long)
+
+f.Intrinsic.Control.BlockEvents
+'Function.Global.General.ReadOption(id, data type, default, sequence, return)
+'0 = Boolean
+'1 = String
+'2 = Float
+'3 = Long
+'4 = Date/Time
+'Function.Global.General.SaveOption(ID [long], sequence [string], boolean value [bool], flag value, text 0 value  [string], text 1 value  [string], float value [float], date value [date], long long value [long])
+'read in company options and set FormInv checkboxes accordingly
+'401282 F_BOOLEAN auto number lots with WO and SUFFIX at WIP to FG
+'400561 seq '0000' F_BOOLEAN auto number lots at PO Receipts and WIP to FG (GS SmartTrack)
+'400561 seq '0001' F_LONG is the LAST lot number used (don't forget to iterate this number when using it)
+'400861 seq '0000' F_LONG is the number of digits used for the part number
+'400862 seq '0000' F_LONG is the number of digits used for revision
+f.Intrinsic.Control.If(v.Screen.Form_Main!chkLicense.checkedasboolean,"=",True)
+	v.Global.bLicensePlate.Set(True)
+f.Intrinsic.Control.Else
+	v.Global.bLicensePlate.Set(False)
+Function.Intrinsic.Control.EndIf
+
+'advanced inventory auto-lot options
+f.Global.General.ReadOption(400561,0,0,"0000",v.Local.bOpt)
+f.Intrinsic.Control.If(v.Local.bOpt,=,True)
+	gui.FormOpt.chk400561.Value(v.Local.bOpt)
+	f.Global.General.ReadOption(400561,3,0,"0001",v.Local.iNum)
+	f.Intrinsic.UI.Msgbox(v.Local.iNum)
+	gui.FormOpt.txt400561.Text(v.Local.iNum.string)
+	gui.FormOpt.txt400561.Enabled(True)
+	gui.FormOpt.lblNextLot.Enabled(True)
+	gui.FormOpt.chk401895.Enabled(False)
+	gui.FormOpt.chk401282.Enabled(False)
+f.Intrinsic.Control.Else
+	gui.FormOpt.chk400561.Value(v.Local.bOpt)
+f.Intrinsic.Control.EndIf
+f.Global.General.ReadOption(400363,0,0,v.Local.bOpt)
+	gui.FormOpt.chk400363.Value(v.Local.bOpt)
+f.Global.General.ReadOption(401895,0,0,v.Local.bOpt)
+	gui.FormOpt.chk401895.Value(v.Local.bOpt)
+f.Global.General.ReadOption(401896,0,0,v.Local.bOpt)
+	gui.FormOpt.chk401896.Value(v.Local.bOpt)
+f.Global.General.ReadOption(401282,0,0,v.Local.bOpt)
+	gui.FormOpt.chk401282.Value(v.Local.bOpt)
+f.Global.General.ReadOption(400524,0,0,v.Local.bOpt)
+	gui.FormOpt.chk400524.value(v.Local.bOpt)
+
+f.Intrinsic.Control.UnBlockEvents
+gui.FormOpt..Show
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Preflight_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.chkLicense_Click.End
+
+Program.Sub.cmdBrwPLEnd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrwPLEnd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(130,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Product Line was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form_PL.txtPLEnd.Text(v.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrwPLEnd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_LOTBIN_CONVERT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBrwPLEnd_Click.End
+
+Program.Sub.cmdBegin_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'bAll = determines all inventory
+'bPLRange = determines a range of product lines ............ done
+'bSortCode = determines a range of sort codes .......... done
+'bLicensPlate= are we using a licnse plate assignment for LOT
+'bInvMast = means we use the default bin from the inventory master
+'bAllinOne = determines all inventory in the same bin
+'bPLtoBIN = determines we have a datatable with pairings PL to BIN or SC to BIN
+
+v.Local..BulkDeclareString(sRange,sLot,sbin,sSql,sFile,sTemp,sStart,sEnd)
+v.Local.bLog.Declare(Boolean)
+v.Local.iRet.Declare(Long)
+v.Local.sRet.Declare(String)
+v.Local.iCount.Declare(Long)
+V.Local.iLen.Declare(Long)
+
+
+
+f.Intrinsic.UI.InvokeWaitDialog("Checking Settings","Conversion Progress")
+'checking options and settings for lot assignment
+f.Intrinsic.Control.CallSub(check_lot)
+
+f.Intrinsic.String.Build("{0}{1}{3}{2}{3}{1}{3}",v.Global.sLog,"-------------------","OPTIONS SELECTED FOR CONVERSION",V.Ambient.NewLine,V.Global.sLog)
+
+f.Intrinsic.UI.ChangeWaitStatus("Retrieving Master Records")
+'create a backup of the existing files incase we have to switch back
+f.Intrinsic.Control.CallSub(backupfiles)
+'determine what the inventory selection is
+f.Intrinsic.Control.If(v.Global.bPLRange,"=",True)
+	v.Local.sStart.Set(v.Screen.Form_PL!txtPLStart.Text)
+	v.Local.sEnd.Set(v.Screen.Form_PL!txtPLEnd.Text)
+	f.Intrinsic.Control.If(v.Local.sStart,"=",v.Local.sEnd)
+		f.Intrinsic.String.Build(" where im.product_line = '{0}' and im.flag_lot <> 'Y'",v.Local.sStart,v.Local.sRange)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build(" where im.product_line between '{0}' and '{1}' and im.flag_lot <> 'Y'",v.Local.sStart,v.Local.sEnd,v.Local.sRange)
+	f.Intrinsic.Control.EndIf
+	'add to log
+	f.Intrinsic.String.Build("{0}Selected Product Line Range from {1} to {2}{3}",v.Global.sLog,v.Local.sStart,v.Local.sEnd,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.ElseIf(v.Global.bSortCode,"=",True)
+	v.Local.sStart.Set(v.Screen.Form_PL!txtSCStart.Text)
+	v.Local.sEnd.Set(v.Screen.Form_PL!txtSCEnd.Text)
+	f.Intrinsic.Control.If(v.Local.sStart,"=",v.Local.sEnd)
+		f.Intrinsic.String.Build(" where im.code_sort = '{0}' and im.flag_lot <> 'Y'",v.Local.sStart,v.Local.sRange)
+	f.Intrinsic.Control.else
+		f.Intrinsic.String.build(" where im.code_sort between '{0}' and '{1}' and im.flag_lot <> 'Y'",v.Local.sStart,v.Local.sEnd,v.Local.sRange)
+	f.Intrinsic.Control.EndIf
+	'add log
+	f.Intrinsic.String.Build("{0}Selected Sort Code Range from {1} to {2}{3}",v.Global.sLog,v.Local.sStart,v.Local.sEnd,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.ElseIf(v.Global.bAll,"=",True)
+	v.Local.sRange.Set(" where im.flag_lot <> 'Y'")
+	'add log
+	f.Intrinsic.String.Build("{0}Selected All Inventory{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.Else
+	Function.Intrinsic.UI.Msgbox("Inventory Selection Not Correct, Try again","Error")
+	f.Intrinsic.Control.CallSub(Form_Main_Unload)
+Function.Intrinsic.Control.EndIf
+
+
+'determine the BIN selection: PLtoBIN and InvMast need be addressed before we make the query.  AllinOne can happen after.
+'if either PLBIN or SCBIN exist, then we'll use a dictionary to fill the bin after the data is retrieved.
+'if single bin is chosen, we'll add the column with a default value after the data is retrieved.
+'if they are using the inventory master default bin then we need to include BIN in the selection.
+
+f.Intrinsic.Control.If(v.Global.bInvMast,"=",True)
+	v.Local.sSql.Set("Select IM.Part, IM.Location, IM.BIN, IM.QTY_ONHAND AS QUANTITY, IM.AMT_COST AS UNIT_COST FROM V_INVENTORY_MSTR IM")
+f.Intrinsic.Control.Else
+	v.Local.ssql.Set("Select IM.Part, IM.Location, IM.QTY_ONHAND AS QUANTITY, IM.AMT_COST AS UNIT_COST FROM V_INVENTORY_MSTR IM")
+f.Intrinsic.Control.EndIf
+
+'build a global query to use later, update the FLAG_LOT field in the inventory master.
+v.Global.sMaster.Set("Select IM.Part, IM.Location, IM.FLAG_LOT from INVENTORY_MSTR IM")
+v.Global.sUpdate.Set("update inventory_mstr set flag_lot = 'Y'")
+
+'include the PL IF they are using PLtoBIN
+f.Intrinsic.Control.If(v.Global.bPLRange,"=",True,"OR",v.Global.bPLtoBIN,"=",True)
+	f.Intrinsic.String.Replace(v.Local.sSql,"IM.Location,","IM.Location, IM.Product_Line,",v.Local.ssql)
+f.Intrinsic.Control.EndIf
+
+
+'include the sort code IF they are using SCtoBIN
+f.Intrinsic.Control.If(v.Global.bSortCode,"=",True)
+	f.Intrinsic.String.Replace(v.Local.sSql,"IM.Location,","IM.Location, IM.Code_Sort,",v.Local.sSql)
+f.Intrinsic.Control.EndIf
+
+'adding selection fields to criteria
+f.Intrinsic.String.Build("{0}{1}",v.Local.sSql,v.Local.sRange,v.Local.sSql)
+f.Intrinsic.String.Build("{0}{1}",v.Global.sMaster,v.Local.sRange,v.Global.sMaster)
+F.Intrinsic.String.Build("{0}{1}",V.Global.sUpdate,v.Local.sRange,v.Global.sUpdate)
+	F.Intrinsic.String.Replace(V.Global.sUpdate,"im.","",v.Global.sUpdate)
+
+f.Data.DataTable.CreateFromSQL("INV","CONX",V.Local.sSql,True)
+
+
+
+'if using inventory master default bin, the column is there with most of the data
+'if using any other method, we have to add the column and populate the data
+V.Local.sRet.Set(V.Screen.Form_PL!txtSingleBin.TEXT)
+F.Intrinsic.Control.If(V.DataTable.PLBIN.Exists,"=",True)
+	f.Data.Dictionary.CreateFromDatatable("PL2BIN","PLBIN","PRODUCT_LINE","BIN")
+	f.Data.DataTable.AddColumn("INV","BIN","STRING")
+	F.Data.DataTable.FillFromDictionary("INV","PL2BIN","PRODUCT_LINE","BIN")
+	f.Intrinsic.String.Build("{0}Used Product Line to BIN association{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+F.Intrinsic.Control.ElseIf(V.DataTable.SCBIN.Exists,"=",True)
+	f.Data.Dictionary.CreateFromDatatable("SC2BIN","SCBIN","SORT_CODE","BIN")
+	F.Data.DataTable.AddColumn("INV","BIN","STRING")
+	F.Data.DataTable.FillFromDictionary("INV","SC2BIN","CODE_SORT","BIN")
+	f.Intrinsic.String.Build("{0}Used Sort Code to BIN Association{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+F.Intrinsic.Control.ElseIf(v.Global.bAllinOne,"=",True)
+	f.Data.DataTable.AddColumn("INV","BIN","STRING",v.Local.sRet,6)
+	f.Intrinsic.String.Build("{0}Use All In One BIN{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.ElseIf(v.Global.bLoctoBin,"=",True)
+	f.Data.DataTable.AddExpressionColumn("INV","BIN","STRING","LOCATION")
+	F.Intrinsic.String.Build("{0}Used Location to BIN{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.Else
+	'inventory master default bin was selected, now we are going to verify that all records have bin data.
+	f.Intrinsic.Control.If(V.Local.sRet,>,"")
+		'add log
+		f.Intrinsic.String.Build("{0}Using the inventory master default BIN's with {1} as a filler for blank data{2}",v.Global.sLog,v.Local.sRet,v.Ambient.NewLine,v.Global.sLog)
+	'an override bin was selected, blank BIN will be populated with the override
+		f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.INV.RowCount--,1)
+			f.Intrinsic.UI.ChangeWaitStatus("Validating BINs - fixing any blanks",v.Local.iCount,0,v.DataTable.INV.RowCount--)
+			v.Local.sTemp.Set(v.DataTable.INV(v.Local.iCount).BIN!FIELDVALTRIM)
+			F.Intrinsic.Control.If(V.Local.sTemp,"=","")
+				f.Data.DataTable.SetValue("INV",V.Local.iCount,"BIN",V.Local.sRet)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCount)
+	F.Intrinsic.Control.Else
+		'add log
+		f.Intrinsic.String.Build("{0}Using the inventory master default BIN's with no override bin selected{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+	'no override was specified, create a log of the BLANK BIN records so they can be fixed.
+		f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.INV.RowCount--,1)
+			f.Intrinsic.UI.ChangeWaitStatus("Validating BINs - checking for blanks",v.Local.iCount,0,v.DataTable.INV.RowCount--)
+			v.Local.sTemp.Set(v.DataTable.INV(v.Local.iCount).BIN!FIELDVALTRIM)
+			F.Intrinsic.Control.If(V.Local.sTemp,"=","")		
+				v.Local.sTemp.Set(v.DataTable.INV(V.Local.iCount).PART!FIELDVALTRIM)
+				F.Intrinsic.String.Build("{0}{1}Part {2} does not have an associated BIN",v.Global.sLog,v.Ambient.NewLine,v.Local.sTemp,v.Global.sLog)
+				f.Intrinsic.Control.If(v.Local.bLog.Set,"=",False)
+					f.Intrinsic.String.Build("Part {0} does not have a associated bin. {1}Based on your selections, this means the inventory master doesn't have an associated bin. You can still continue the program and get a log file of all parts that don't have a bin, or you can restart the program and set an override bin",v.Local.stemp,v.Ambient.NewLine,v.Local.stemp)
+					f.Intrinsic.String.Build("{0}{1}{1}Clicking continue will give you a log file for review.  it will not create any LOT/BIN records",v.Local.sTemp,v.Ambient.NewLine,v.Local.stemp)
+					f.Intrinsic.String.Build("{0}{1}{1}By clicking restart, the process will end.",v.Local.stemp,v.Ambient.NewLine,v.Local.sTemp)
+					f.Intrinsic.UI.MsgBoxExt("ERROR - MISSING BINS",V.Local.STEMP,"24*!*Continue*!*Restart",100,400)
+					V.Local.STEMP.Set(V.Ambient.AltBoxClick)
+					f.Intrinsic.Control.If(v.Ambient.AltBoxClick,"=",4)
+						f.Intrinsic.Control.CallSub(form_main_unload)
+					f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.EndIf
+				v.Local.bLog.Set(True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCount)
+	f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'if bLog is true, then they've chosen to use the inventory master default bin, but some of those were blank.
+'they've been logged and we will output the log to a text file and exit the program
+f.Intrinsic.Control.If(v.Local.bLog,"=",True)
+	f.Intrinsic.String.Build("{0}\{1}",v.Caller.FilesDir,"ConversionLog.txt",v.Local.sFile)
+	f.Intrinsic.file.String2File(v.Local.sfile,v.Global.sLog)
+	f.Intrinsic.String.Build("Items without BIN's.  Please review {0} to fix. Then run again",v.Local.sFile,v.Local.sTemp)
+	f.Intrinsic.UI.Msgbox(v.Local.stemp,"Data Errors")
+	f.Intrinsic.Control.CallSub(Form_Main_Unload)
+f.Intrinsic.Control.EndIf
+
+'by now we have all of our inventory and assigned BIN's.
+'now we add the lot data based on settings.
+'400561 seq '0001' F_LONG is the LAST lot number used
+
+f.Intrinsic.Control.If(v.Global.bLicensePlate,"=",True)
+	f.Intrinsic.String.Build("{0}GSS SmartTrack was selected{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+	'need the auto lot number regardless of options for this process
+	f.Global.General.ReadOption("400561",3,1,"0001",v.Local.iRet)
+	f.Intrinsic.Math.Add(v.Local.iRet,1,v.Local.iRet)
+	f.Intrinsic.Control.If(v.Global.bAuto,"=",True)
+		'using auto lot
+		f.Intrinsic.String.Build("{0}Auto Lot Numbering is being used{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+		f.Data.DataTable.AddColumn("INV","LOT","STRING")
+		F.Intrinsic.Control.For(V.Local.iCount,0,v.DataTable.INV.RowCount--,1)
+			f.Intrinsic.UI.ChangeWaitStatus("Validating LOT information",v.Local.iCount,0,v.DataTable.INV.RowCount--)
+			f.Intrinsic.String.LPad(v.Local.iRet,"0",6,v.Local.sRet)
+			F.Data.DataTable.SetValue("INV",V.Local.iCount,"LOT",V.Local.sRet)
+			f.Intrinsic.Math.Add(v.Local.iRet,1,v.Local.iRet)			
+			F.Intrinsic.Control.If(V.DataTable.INV(V.Local.iCount).BIN!FIELDVALTRIM,"=","")
+				F.Intrinsic.String.Build("PART {0} has an invalid BIN based on the method you are choosing.{1}More than likely, the part does not have a product line.",v.DataTable.INV(v.Local.iCount).BIN!FIELDVALTRIM,v.Ambient.NewLine,V.Local.sRet)
+				F.Intrinsic.UI.Msgbox(V.Local.sRet,"PROGRAM END - RETRY")
+				F.Intrinsic.Control.CallSub(FORM_MAIN_UNLOAD)
+			F.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCount)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}Not using Auto Lot as the standard method{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+		f.Data.DataTable.AddColumn("INV","LOT","STRING")
+		F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.INV.RowCount--,1)
+			f.Intrinsic.UI.ChangeWaitStatus("Validating LOT information",v.Local.iCount,0,v.DataTable.INV.RowCount--)
+			F.Intrinsic.String.Len(V.DataTable.INV(V.Local.iCount).PART!FIELDVALTRIM,V.Local.iLen)
+			F.Intrinsic.Control.If(V.Local.iLen,"<",16)
+				f.Data.DataTable.SetValue("INV",V.Local.iCount,"LOT",V.DataTable.INV(V.Local.iCount).PART!FIELDVALTRIM)
+				F.Intrinsic.Control.If(V.DataTable.INV(V.Local.iCount).BIN!FIELDVALTRIM,"=","")
+					F.Intrinsic.String.Build("PART {0} has an invalid BIN based on the method you are choosing.{1}More than likely, the part does not have a product line.",v.DataTable.INV(v.Local.iCount).BIN!FIELDVALTRIM,v.Ambient.NewLine,V.Local.sRet)
+					F.Intrinsic.UI.Msgbox(V.Local.sRet,"PROGRAM END - RETRY")
+					F.Intrinsic.Control.CallSub(FORM_MAIN_UNLOAD)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				f.Intrinsic.String.LPad(v.Local.iRet,"0",6,v.Local.sRet)
+				F.Data.DataTable.SetValue("INV",V.Local.iCount,"LOT",V.Local.sRet)
+				F.Intrinsic.Math.Add(V.Local.iRet,1,V.Local.iRet)				
+				F.Intrinsic.Control.If(V.DataTable.INV(V.Local.iCount).BIN!FIELDVALTRIM,"=","")
+					F.Intrinsic.String.Build("PART {0} has an invalid BIN based on the method you are choosing.{1}More than likely, the part does not have a product line.",v.DataTable.INV(v.Local.iCount).BIN!FIELDVALTRIM,v.Ambient.NewLine,V.Local.sRet)
+					F.Intrinsic.UI.Msgbox(V.Local.sRet,"PROGRAM END - RETRY")
+					F.Intrinsic.Control.CallSub(FORM_MAIN_UNLOAD)
+				F.Intrinsic.Control.EndIf				
+			f.Intrinsic.Control.EndIf			
+		F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Data.DataTable.AddColumn("INV","LOT","STRING")
+	'even though they are not using LOT, adding the column so the build process goes faster and doesn't blow up with a non-existent column.
+F.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.String.Build("{0}nventory Master and Item Master have both been backed up{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.String.Build("{0}datatable for item master is complete, moving to bins{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.CallSub(getbin)
+f.Intrinsic.String.Build("{0}All BIN's validated and BIN upload file has been created{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.CallSub(flags)
+f.Intrinsic.String.Build("{0}flag_lot set on all invetory_master records related to the datatable, moving to build text file{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+f.Intrinsic.Control.CallSub(buildtext)
+f.Intrinsic.String.Build("{0}item master text file has been created, starting upload{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+
+
+F.Data.DataTable.SaveToDB("ITEM_MASTER","CONX","ITEM_MASTER","PART*!*LOCATION*!*LOT*!*BIN*!*HEAT*!*SERIAL_NUMBER",128,"PART@!@PART*!*LOCATION@!@LOCATION*!*QUANTITY@!@QUANTITY*!*BIN@!@BIN*!*LOT@!@LOT*!*HEAT@!@HEAT*!*SERIAL_NUMBER@!@SERIAL_NUMBER*!*USERID@!@USERID*!*TERMINAL_ID@!@TERMINAL_ID*!*DATE_REVISION@!@DATE_REVISION*!*QTY_AVAILABLE_SHIP@!@QTY_AVAILABLE_SHIP*!*MATL_COST@!@MATL_COST*!*UNIT_COST@!@UNIT_COST")
+
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk400561.checkedasboolean,=,True)
+	'commented out by Brady 06/16/23
+	'F.Data.DataTable.Compute("ITEM_MASTER","max(LOT)","",V.Local.iRet)	
+	'f.Global.General.SaveOption(400561,"001","","","","","","",v.Local.iRet)
+	f.Global.General.SaveOption(400561,"001","","","","","","",v.Local.sRet)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.SaveToDB("OLD_BIN","CONX","BIN_MASTER","BIN*!*LOCATION","256")
+
+f.Intrinsic.Control.CallSub(costupdate)
+
+F.Intrinsic.Control.CallSub(FORM_MAIN_UNLOAD)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdBegin_Click.End
+
+Program.Sub.save_PLBin.Start
+f.Data.DataTable.Create("lotbin")
+
+'f.Data.linq.join("leftjoin","Datatable","INV*!*IM","DataTable","LOTBIN*!*GC","IM.PRODUCT_LINE=GC.PRODUCT_LINE","IM.PART,IM.LOCATION,IM.QTY_ONHAND,IM.AMT_COST,GC.BIN","WHERE","GROUP BY","ORDER BY","INVOUT",True)
+
+
+Program.Sub.save_PLBin.End
+
+Program.Sub.check_lot.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.iRet.Declare(Long)
+v.Local.iRet2.Declare(Long)
+'we need to determine how we're going to assign lot numbers based on company options
+'400363 F_BOOLEAN use locations
+'400774 seq '0000' F_BOOLEAN use engineering change control
+	'the above 2 options tells us that they are using rev and/or location
+	'in either case, we can't use 15 characters of the PART field for LOT because that value would be duplicated (per rev, per loc)
+	'that won't work for GS SmartTrack inventory.
+
+'401282 F_BOOLEAN auto number lots with WO and SUFFIX at WIP to FG
+'400561 seq '0000' F_BOOLEAN auto number lots at PO Receipts and WIP to FG (GS SmartTrack)
+'400561 seq '0001' F_LONG is the LAST lot number used (don't forget to iterate this number when using it)
+'400861 seq '0000' F_LONG is the number of digits used for the part number
+'400862 seq '0000' F_LONG is the number of digits used for revision
+
+f.Intrinsic.Control.If(v.Global.bLicensePlate,"=",True)
+	F.Global.General.ReadOption("400363",0,2,v.local.iRet)
+	f.Global.General.ReadOption("400774",0,2,v.Local.iRet2)
+	F.Intrinsic.Control.If(V.Local.iRet,"=",1)
+		f.Intrinsic.String.Build("{0}Company option 'use locations' is turned on.  Autonumber lots will be used for all{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.slog)
+		v.Global.bAuto.Set(True)
+	f.Intrinsic.Control.Elseif(v.Local.iRet2,"=",1)
+		f.Intrinsic.String.Build("{0}Company option 'use engineering change control' is turned on.  Autonumber lots will be used for all{1}",v.Global.sLog,v.Ambient.NewLine,v.Global.sLog)
+		v.Global.bAuto.Set(True)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}Rev and Location are not used. LOT will be equal to the part# unless the length exceeds 15 characters.  Then an autonumber will be assigned{1}",v.Global.slog,v.Ambient.NewLine,v.Global.slog)
+		v.Global.bAuto.Set(False)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.check_lot.End
+
+Program.Sub.flags.Start
+'this subroutine is to set the lot/bin flag for all parts in the datatable.  As some parts may have zero quantity, they won't be part of the upload.
+'since those parts are not in the upload, the flag won't be changed by the core process.
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sSql.Declare(String)
+v.Local.sPart.Declare(String)
+v.Local.sLoc.Declare(String)
+v.Local.iCount.Declare(Long)
+
+
+f.ODBC.Connection!conx.execute(v.Global.sUpdate)
+
+'f.Data.DataTable.CreateFromSQL("MASTER","CONX",V.Global.sMaster,True)
+
+'F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.MASTER.RowCount--,1)
+'	f.Intrinsic.UI.ChangeWaitStatus("Updating inventory master LOT flag...",v.Local.iCount,0,v.DataTable.MASTER.RowCount)
+'	F.Intrinsic.String.Build("UPDATE INVENTORY_MSTR SET FLAG_LOT = 'Y' WHERE PART = '{0}' AND LOCATION = '{1}'",V.DataTable.MASTER(V.Local.iCount)PART.FIELDVALTRIM,V.DataTable.MASTER(V.Local.iCount).LOCATION!FIELDVALTRIM,V.Local.sSql)
+'	F.ODBC.Connection!conx.execute(v.Local.sSql)
+'F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.Control.ExitSub
+
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.flags.End
+
+Program.Sub.buildtext.Start
+'creating the item master upload file
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sFile.Declare(String)
+v.Local.sPath.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.iCount.Declare(Long)
+V.Local.sLine.Declare(String)
+v.Local.bFile.Declare(Boolean)
+'add an if statement here that checks the settings for "allow negatives".  If they allow negatives, we want to create records for everything.  If they don't allow negatives, only create records where quantity is <> 0.  This has to do with manual physical inventory adjustments.
+
+f.Data.DataView.Create("INV","NOZERO_V",22,"","PART ASC")
+F.Data.DataView.ToDataTable("INV","NOZERO_V","ITEM",True)
+
+f.Data.DataTable.CreateFromSQL("ITEM_MASTER","CONX","select top 0 PART, LOCATION, LOT, BIN, HEAT, SERIAL_NUMBER, QUANTITY, UNIT_COST, USERID, TERMINAL_ID FROM ITEM_MASTER",True)
+F.Data.DataTable.Merge("ITEM","ITEM_MASTER",False,2)
+F.Data.DataTable.SetValue("ITEM_MASTER",-1,"USERID","CONVERTB")
+F.Data.DataTable.SetValue("ITEM_MASTER",-1,"TERMINAL_ID",V.Caller.Terminal)
+F.Data.DataTable.AddColumn("ITEM_MASTER","DATE_REVISION","STRING",V.Ambient.Date.FormatYYYYMMDD)
+F.Data.DataTable.AddExpressionColumn("ITEM_MASTER","QTY_AVAILABLE_SHIP","STRING","QUANTITY")
+F.Data.DataTable.AddExpressionColumn("ITEM_MASTER","MATL_COST","FLOAT","UNIT_COST")
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.buildtext.End
+
+Program.Sub.getbin.Start
+'validating that the BIN's they have selected for this process actually exist in the system.
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sSql.Declare(String)
+v.Local.sBin.Declare(String)
+v.Local.sLoc.Declare(String)
+v.Local.sRet.Declare(String)
+V.Local.iCount.Declare(Long)
+
+
+
+f.Data.DataView.Create("INV","V_INV")
+F.Data.DataView.ToDataTableDistinct("INV","V_INV","BINS","BIN*!*LOCATION",True)
+f.Data.DataView.Close("INV","V_INV")
+'get existing bin's in to a datatable
+v.Local.sSql.Set("SELECT * FROM V_BIN_MASTER")
+F.Data.DataTable.CreateFromSQL("OLD_BIN","CONX",V.Local.sSql,True)
+
+
+f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.BINS.RowCount--,1)
+	F.Intrinsic.UI.ChangeWaitStatus("Processing BINS.....",v.Local.iCount,0,v.DataTable.BINS.RowCount)
+	V.Local.sBin.Set(V.DataTable.BINS(V.Local.iCount).BIN!FIELDVALTRIM)
+	v.Local.sLoc.Set(V.DataTable.BINS(v.Local.iCount).LOCATION!FIELDVALTRIM)
+	F.Intrinsic.String.Build("SELECT BIN FROM V_BIN_MASTER WHERE BIN = '{0}' and LOCATION = '{1}'",V.Local.sBin,V.Local.sLoc,V.Local.sSql)
+	F.ODBC.Connection!conx.EXECUTEANDRETURN(V.Local.sSql,V.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet.TRIM,"<>",v.Local.sBin.TRIM)
+		f.Data.DataTable.AddRow("OLD_BIN","BIN",V.Local.sBin,"LOCATION",V.Local.sLoc)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.getbin.End
+
+Program.Sub.backupfiles.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sSource.Declare(String)
+v.Local.sDest.Declare(String)
+V.Local.sDestFile.Declare(String)
+v.Local.bExists.Declare
+
+f.Intrinsic.UI.ChangeWaitStatus("Backing up files........")
+'want to create a custom folder and copy the backup files there before running the process
+f.Intrinsic.String.Build("{0}\CUSTOM\5360\{1}",V.Caller.GlobalDir,v.Caller.CompanyCode,V.Local.sDest)
+f.Intrinsic.File.DirExists(v.Local.sDest,v.Local.bExists)
+f.Intrinsic.Control.If(v.Local.bExists,=,False)
+	f.Intrinsic.File.CreateDir(v.Local.sDest)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("{0}\{1}{2}",v.Caller.FilesDir,"ITMST",V.Caller.CompanyCode,V.Local.sSource)
+F.Intrinsic.String.Build("{0}\{1}{2}",V.Local.sDest,"ITMST",V.Caller.CompanyCode,V.Local.sDestFile)
+f.Intrinsic.File.CopyFile(v.Local.sSource,V.Local.sDestFile)
+f.Intrinsic.String.Build("{0}\{1}{2}",v.Caller.FilesDir,"I1MST",V.Caller.CompanyCode,V.Local.sSource)
+F.Intrinsic.String.Build("{0}\{1}{2}",V.Local.sDest,"I1MST",V.Caller.CompanyCode,V.Local.sDestFile)
+f.Intrinsic.File.CopyFile(v.Local.sSource,v.Local.sDestFile)
+f.Intrinsic.String.Build("{0}\{1}{2}",v.Caller.FilesDir,"BNMST",V.Caller.CompanyCode,V.Local.sSource)
+F.Intrinsic.String.Build("{0}\{1}{2}",V.Local.sDest,"BNMST",V.Caller.CompanyCode,V.Local.sDestFile)
+f.Intrinsic.File.CopyFile(v.Local.sSource,v.Local.sDestFile)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.backupfiles.End
+
+Program.Sub.costupdate.Start
+F.Intrinsic.Control.SetErrorHandler("Sub_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sParams.Declare(String)
+v.Local.sFile.Declare(String)
+
+F.Intrinsic.Task.LaunchGSSSync("FIXONHND/NF","-c","")
+'F.Intrinsic.Task.LaunchGSSSync("FIXICOST/NF","-c","")
+F.Intrinsic.UI.Msgbox("Conversion Completed.")
+
+F.Intrinsic.String.Build("{0}\CUSTOM\5360\{1}\Conversion.txt",v.Caller.GlobalDir,v.Caller.CompanyCode,v.Local.sFile)
+f.Intrinsic.File.String2File(v.Local.sFile,v.Global.sLog)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Sub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: Project",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.costupdate.End
+
+'==================================================
+'setting company options based on selections made on formOpt
+'the chk_click subs control the view on the screen, options are not changed in the system until cmdSaveOpt_Click
+Program.Sub.chk400561_Click.Start
+'advanced inventory auto-lot checkbox
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk400561.checkedasboolean,=,True)
+	gui.FormOpt.chk401895.Enabled(False)
+	gui.FormOpt.chk401282.Enabled(False)
+	gui.FormOpt.txt400561.Enabled(True)
+	gui.FormOpt.lblNextLot.Enabled(True)
+f.Intrinsic.Control.Else
+	gui.FormOpt.chk401895.Enabled(True)
+	gui.FormOpt.chk401282.Enabled(True)
+	gui.FormOpt.txt400561.Enabled(False)
+	gui.FormOpt.lblNextLot.Enabled(False)	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.ExitSub
+Program.Sub.chk400561_Click.End
+
+Program.Sub.chk401895_Click.Start
+'advanced purchasing - auto number lots if part is flagged
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk401895.checkedasboolean,=,True)
+	gui.FormOpt.txt400561.Enabled(false)
+	gui.FormOpt.chk400561.Enabled(false)
+	gui.FormOpt.chk401282.Enabled(True)
+f.Intrinsic.Control.Else
+	gui.FormOpt.txt400561.Enabled(True)
+	gui.FormOpt.chk400561.Enabled(True)
+	gui.FormOpt.chk401282.Enabled(True)
+f.Intrinsic.Control.EndIf
+Program.Sub.chk401895_Click.End
+
+Program.Sub.chk401282_Click.Start
+'auto number lots with work order and suffix at wip to fg
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk401282.checkedasboolean,=,True)
+	gui.FormOpt.txt400561.Enabled(false)
+	gui.FormOpt.chk400561.Enabled(false)
+	gui.FormOpt.chk401895.Enabled(True)
+f.Intrinsic.Control.Else
+	gui.FormOpt.txt400561.Enabled(True)
+	gui.FormOpt.chk400561.Enabled(True)
+	gui.FormOpt.chk401895.Enabled(True)
+f.Intrinsic.Control.EndIf
+Program.Sub.chk401282_Click.End
+
+Program.Sub.cmdCancelOpt_Click.Start
+gui.FormOpt..Visible(False)
+Program.Sub.cmdCancelOpt_Click.End
+
+Program.Sub.cmdSaveOpt_Click.Start
+v.Local.iNum.Declare(Long)
+
+
+'multiple locations
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk400363.checkedasboolean,=,True)
+	f.Global.General.SaveOption(400363,"000",1,"","","","","")
+f.Intrinsic.Control.Else
+	f.Global.General.SaveOption(400363,"000",0,"","","","","")
+f.Intrinsic.Control.EndIf
+'advanced inventory auto-lot checkbox
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk400561.checkedasboolean,=,True)
+	f.Global.General.SaveOption(400561,"000",1,"","","","","")
+'advanced inventory auto-lot starting number
+	v.Local.iNum.Set(v.Screen.FormOpt!txt400561.text)	
+	f.Global.General.SaveOption(400561,"001","","","","","","",v.Local.iNum)
+f.Intrinsic.Control.Else
+	f.Global.General.SaveOption(400561,"000",0,"","","","","")
+f.Intrinsic.Control.EndIf
+'advanced purchasing - auto number lots if part is flagged
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk401895.checkedasboolean,=,True)
+	f.Global.General.SaveOption(401895,"000",1,"","","","","")
+f.Intrinsic.Control.Else
+	f.Global.General.SaveOption(401895,"000",0,"","","","","")
+f.Intrinsic.Control.EndIf
+'generate multiple lots at PO Receipt
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk401896.checkedasboolean,=,True)
+	f.Global.General.SaveOption(401896,"000",1,"","","","","")
+f.Intrinsic.Control.Else
+	f.Global.General.SaveOption(401896,"000",1,"","","","","")
+f.Intrinsic.Control.EndIf
+'auto number lots with work order and suffix at wip to fg
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk401282.checkedasboolean,=,True)
+	f.Global.General.SaveOption(401282,"000",1,"","","","","")
+f.Intrinsic.Control.Else
+	f.Global.General.SaveOption(401282,"000",0,"","","","","")
+f.Intrinsic.Control.EndIf
+'custom option - delete zero quantity lot/bin records on transfers
+f.Intrinsic.Control.If(v.Screen.FormOpt!chk400524.checkedasboolean,=,True)
+	f.Global.General.SaveOption(400524,"000",1,"","","","","")
+f.Intrinsic.Control.Else
+	f.Global.General.SaveOption(400524,"000",0,"","","","","")
+f.Intrinsic.Control.EndIf
+
+gui.FormOpt..Visible(False)
+
+Program.Sub.cmdSaveOpt_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_LOTBIN_CONVERT$}$DLF$}$9/29/2017 7:44:48 PM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This program is used to convert standard inventory to a lot/bin inventory based on product line.  It's primary use is prepping customers for GS Mobile to be able to roll out a LOT/BIN invenotry as GS Mobile is being trained onsite.
+${$5$}$2.0.0.0$}$2
+${$6$}$bstevens$}$20230816160827259$}$3Pg7+K2MGztoXyjxMVZqWaM5g3GOUsSNmE89BxAsd2teuOw0ARlpW39WVBUReu/kSTrVb+8Bjp2j4VUOHvxljQ==
+Program.Sub.Comments.End
